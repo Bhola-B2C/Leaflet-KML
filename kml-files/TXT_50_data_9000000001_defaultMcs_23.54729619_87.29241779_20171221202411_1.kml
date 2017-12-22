@@ -3,26 +3,24 @@
 <Document>
 <Placemark>
 <styleUrl>#1</styleUrl>
-<name>Polygon</name>
-<description><![CDATA[<img source='IMG_50_data_9000000006_defaultMcs_23.5471519_87.2925784_20171217154719_0.jpg'>
-<p>NIT</p>]]></description>
+<description><![CDATA[f]]></description>
 <Polygon>
 <outerBoundaryIs>
 <LinearRing>
-<coordinates>88.285271,24.55547,0.0 88.286012,24.556335,0.0 88.290786,24.555185,0.0 87.29614,23.551408,0.0 87.290754,23.543382,0.0 87.286462,23.547081,0.0 87.288415,23.550366,0.0 87.285271,23.55547,0.0 </coordinates>
+<coordinates>87.28127,23.539123,0.0 87.28393,23.538661,0.0 87.283072,23.53693,0.0 87.28127,23.539123,0.0 </coordinates>
 </LinearRing>
 </outerBoundaryIs>
 </Polygon>
 </Placemark>
 <ExtendedData>
-<Data name="Time Stamp"><value>20171217154719</value></Data>
+<Data name="Time Stamp"><value>20171221202411</value></Data>
 <Data name="Destination"><value>defaultMcs</value></Data>
 <Data name="Group Type"><value>data</value></Data>
-<Data name="Lat Long"><value>23.5471519_87.2925784</value></Data>
-<Data name="Group ID"><value>0</value></Data>
-<Data name="Source"><value>9000000006</value></Data>
+<Data name="Lat Long"><value>23.54729619_87.29241779</value></Data>
+<Data name="Group ID"><value>1</value></Data>
+<Data name="Source"><value>9000000001</value></Data>
 <Data name="KML Type"><value>Polygon</value></Data>
-<Data name="Media Type"><value>IMG</value></Data>
+<Data name="Media Type"><value>TXT</value></Data>
 <Data name="Priority"><value>50</value></Data>
 </ExtendedData>
 <Style id='1'>

@@ -13,6 +13,7 @@
     "express": "^4.16.2",
     "fs": "0.0.1-security",
     "fs-readdir-promise": "^1.0.1",
+    "ip": "^1.1.5",
     "leaflet": "^1.2.0",
     "leaflet-omnivore": "^0.3.4",
     "readfiles": "^1.0.0",

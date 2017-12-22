@@ -1,5 +1,7 @@
 var L = require('leaflet');
 var omnivore = require('leaflet-omnivore');
+var ip = require('ip');
+var add = ip.address();
 
 var mymap = L.map('map').setView([23.552488, 87.293613],15);
 
@@ -24,8 +26,8 @@ var getJSON = function(url, callback) {
     };
     xhr.send();
 };
-
-getJSON('http://localhost:8000/',
+console.log('http://'+add+':3000/');
+getJSON('http://'+add+':3000/',
 function(err, data) {
   if (err !== null) {
     alert('Something went wrong: ' + err);
