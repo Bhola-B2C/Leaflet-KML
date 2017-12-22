@@ -1,0 +1,26 @@
+{
+  "name": "leaflet-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "beefy app.js:bundle.js --live",
+    "bundle": "browserify app.js -o bundle.js"
+  },
+  "author": "Bhola",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "fs-readdir-promise": "^1.0.1",
+    "leaflet": "^1.2.0",
+    "leaflet-omnivore": "^0.3.4",
+    "readfiles": "^1.0.0",
+    "w": "^1.0.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.8",
+    "browserify": "^14.5.0"
+  }
+}
