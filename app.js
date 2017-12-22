@@ -26,8 +26,9 @@ var getJSON = function(url, callback) {
     };
     xhr.send();
 };
-console.log('http://'+add+':3000/');
-getJSON('http://'+add+':3000/',
+console.log(window.location.protocol);
+console.log(window.location.hostname);
+getJSON(window.location.protocol + '//'+ window.location.hostname + ':3000',
 function(err, data) {
   if (err !== null) {
     alert('Something went wrong: ' + err);
