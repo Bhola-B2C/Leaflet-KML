@@ -1,15 +1,6 @@
 var L = require('leaflet');
 var omnivore = require('leaflet-omnivore');
 
-var mymap = L.map('map').setView([23.552488, 87.293613],15);
-var f = require('fs');
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      maxZoom: 18,
-      id: 'mapbox.streets',
-      accessToken: 'pk.eyJ1IjoiYmhvbGEtYjJjIiwiYSI6ImNqYmdicWlmMDFnM2IycnF3bm9meDlieDIifQ.6edZqKmL3_kl0crsw-UQvw'
-}).addTo(mymap);
-
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -25,9 +16,13 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-/*f.watch("./kml-files", { persistent: true }, function (event, filename) {
-  location.reload();
-});*/
+var map = L.map('map');
+var layer = Tangram.leafletLayer({
+  scene: 'scene.yaml'
+})
+layer.addTo(map);
+map.setView([23.5515, 87.2963], 14);
+
 var oldFile=[];
 
 setInterval(function(){
@@ -54,19 +49,20 @@ setInterval(function(){
 
       //console.log(flag);
       if(flag) {
-        mymap.eachLayer(function (layer) {
-              mymap.remove(layer);
+        map.eachLayer(function (layer) {
+              map.remove(layer);
         });
-        mymap = L.map('map').setView([23.552488, 87.293613],15);
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-          maxZoom: 18,
-          id: 'mapbox.streets',
-          accessToken: 'pk.eyJ1IjoiYmhvbGEtYjJjIiwiYSI6ImNqYmdicWlmMDFnM2IycnF3bm9meDlieDIifQ.6edZqKmL3_kl0crsw-UQvw'
-        }).addTo(mymap);
+        map = L.map('map');
+        layer = Tangram.leafletLayer({
+          scene: 'scene.yaml'
+        })
+        layer.addTo(map);
+        map.setView([23.5515, 87.2963], 14);
+
         for(var i=0;i<file_arr.length;i++) {
           if(file_arr[i]!=null)
           {
-            omnivore.kml('./kml-files/'+file_arr[i]).addTo(mymap);
+            omnivore.kml('./kml-files/'+file_arr[i]).addTo(map);
           }
         }
         oldFile=file_arr;
@@ -74,21 +70,3 @@ setInterval(function(){
     }
   });
   },1000);
-
-/*console.log(window.location.protocol);
-console.log(window.location.hostname);
-getJSON(window.location.protocol + '//'+ window.location.hostname + ':3030',
-function(err, data) {
-  if (err !== null) {
-    alert('Something went wrong: ' + err);
-  } else {
-    var file_arr = Object.values(data);
-    for(var i=0;i<file_arr.length;i++) {
-      if(file_arr[i]!=null)
-      {
-    	 console.log(file_arr[i]);
-    	 omnivore.kml('./kml-files/'+file_arr[i]).addTo(mymap);
-      }
-    }
-  }
-});*/
